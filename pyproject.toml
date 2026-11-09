@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toc-connect"
+version = "0.1.0"
+description = "Conectividade funcional de circuitos de interesse no TOC a partir de rs-fMRI BIDS"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Projeto acadêmico — protótipo"}]
+dependencies = [
+  "nibabel>=5.2", "nilearn>=0.10", "numpy>=1.24", "pandas>=2.0",
+  "matplotlib>=3.7", "seaborn>=0.13", "pybids>=0.16"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+toc-connect = "toc_connect.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
